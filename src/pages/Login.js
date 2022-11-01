@@ -46,6 +46,9 @@ class Login extends React.Component {
     }), () => this.completeValidation());
   };
 
+  // Em group programming com Joseane, João Pedro,
+  // João Lelles, Sérgio Moreira e Scarlat
+
   handleClick = () => {
     const { email } = this.state;
     const { dispatch, history } = this.props;
