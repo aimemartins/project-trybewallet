@@ -1,4 +1,4 @@
-import { SAVE_WALLET } from '../actions';
+import { SAVE_WALLET, SAVE_EXPENSES } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 
@@ -14,6 +14,11 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       currencies: Object.keys(action.wallet).filter((el) => el !== 'USDT'),
+    };
+  case SAVE_EXPENSES:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload],
     };
   default:
     return state;
