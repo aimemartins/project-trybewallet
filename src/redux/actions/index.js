@@ -34,6 +34,13 @@ export const saveExpenses = (payload) => ({
   payload,
 });
 
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
+
+export const deleteExpenses = (payload) => ({
+  type: DELETE_EXPENSES,
+  payload,
+});
+
 // export const fetchResponseAPI = async (dispatch) => {
 //   const response = await responseAPI();
 //   dispatch(requestAPI(response));

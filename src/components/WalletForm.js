@@ -28,6 +28,7 @@ class WalletForm extends Component {
       [name]: value,
     });
   };
+  // Função realizada em group programming (Sérgio, João Felipe, Jose, João Lelles)
 
   handleClick = async () => {
     const {
