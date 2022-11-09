@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { deleteExpenses } from '../redux/actions';
+import { deleteExpenses, editBtnOn } from '../redux/actions';
 
 // construção da função deleteButton e expenses.map em group programmming (João Felipe, Sérgio, Joseane e João Lelles)
 
@@ -10,6 +10,12 @@ class Table extends Component {
     const { expenses, dispatch } = this.props;
     const filter = expenses.filter((elem) => elem.id !== payload);
     dispatch(deleteExpenses(filter));
+  };
+  // Ajuda de Victor Salles para realização do requisito 9
+
+  editBtn = (id) => {
+    const { dispatch } = this.props;
+    dispatch(editBtnOn(id));
   };
 
   render() {
@@ -46,7 +52,14 @@ class Table extends Component {
                 </td>
                 <td>Real</td>
                 <td>
-                  <button type="button">Editar</button>
+                  <button
+                    type="button"
+                    onClick={ () => this.editBtn(elem.id) }
+                    data-testid="edit-btn"
+                  >
+                    Editar
+
+                  </button>
                   <button
                     type="button"
                     data-testid="delete-btn"

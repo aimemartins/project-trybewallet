@@ -40,7 +40,28 @@ export const deleteExpenses = (payload) => ({
   type: DELETE_EXPENSES,
   payload,
 });
+// -------------------Editar as expenses do Estado Global
 
+export const EDIT_BTN_ON = 'EDIT_BTN_ON';
+
+export const editBtnOn = (payload) => ({
+  type: EDIT_BTN_ON,
+  payload,
+});
+
+export const EDIT_EXPENSES = 'EDIT_EXPENSES';
+
+export const editExpenses = (payload) => ({
+  type: EDIT_EXPENSES,
+  payload,
+});
+
+export const EDIT_BTN_OFF = 'EDIT_BTN_OFF';
+
+export const editBtnOff = () => ({
+  type: EDIT_BTN_OFF,
+  payload: 0,
+});
 // export const fetchResponseAPI = async (dispatch) => {
 //   const response = await responseAPI();
 //   dispatch(requestAPI(response));
